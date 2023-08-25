@@ -15,8 +15,7 @@ model = dict(
 
 iters = 300000
 # optimizer
-optimizer = dict(
-    type='AdamW', lr=0.0001, betas=(0.9, 0.999), weight_decay=0.0001)
+optimizer = dict(type='AdamW', lr=0.0001, betas=(0.9, 0.999), weight_decay=0.0001)
 # optimizer
 optim_wrapper = dict(
     type='OptimWrapper',
