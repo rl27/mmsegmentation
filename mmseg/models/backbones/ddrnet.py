@@ -7,6 +7,8 @@ from mmseg.models.utils import DAPPM, BasicBlock, Bottleneck, resize
 from mmseg.registry import MODELS
 from mmseg.utils import OptConfigType
 
+from torchvision import transforms as T
+
 
 @MODELS.register_module()
 class DDRNet(BaseModule):
@@ -180,6 +182,8 @@ class DDRNet(BaseModule):
 
     def forward(self, x):
         """Forward function."""
+        if x.shape[-2] != 1024 or x.shape[-1] != 1024:
+            x = T.CenterCrop((1024, 1024))(x)
         out_size = (x.shape[-2] // 8, x.shape[-1] // 8)
 
         # stage 0-2
