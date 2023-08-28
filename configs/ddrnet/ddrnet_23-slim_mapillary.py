@@ -31,7 +31,7 @@ model = dict(
         ppm_channels=128,
         norm_cfg=norm_cfg,
         align_corners=False,
-        # init_cfg=dict(type='Pretrained', checkpoint=checkpoint)
+        init_cfg=dict(type='Pretrained', checkpoint=checkpoint)
     ),
     decode_head=dict(
         type='DDRHead',
@@ -59,8 +59,6 @@ model = dict(
     # model training and testing settings
     train_cfg=dict(),
     test_cfg=dict(mode='whole'))
-
-
 
 
 train_dataloader = dict(batch_size=2)
