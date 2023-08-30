@@ -1,7 +1,7 @@
 # dataset settings
-dataset_type = 'SideGuide'
+dataset_type = 'SideGuideDataset'
 data_root = 'data/sideguide/'
-crop_size = (512, 1024)
+crop_size = (1024, 1024)
 train_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(type='LoadAnnotations'),
